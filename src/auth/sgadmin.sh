@@ -10,6 +10,7 @@ sgadmin(){
     -kspass $KS_PWD \
     -tspass $TS_PWD \
     -h $ES_HOST \
+    -p $ES_PORT \
     -nhnv
 }
 
