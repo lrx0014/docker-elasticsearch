@@ -13,7 +13,7 @@ fi
 
 /run/miscellaneous/restore_config.sh
 cat /elasticsearch/config/elasticsearch.yml
-/run/auth/certificates/gen_all.sh
+# /run/auth/certificates/gen_all.sh
 
 chown -R elasticsearch:elasticsearch /elasticsearch
 

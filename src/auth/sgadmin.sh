@@ -3,13 +3,13 @@
 sgadmin(){
     chmod +x /elasticsearch/plugins/search-guard-6/tools/sgadmin.sh
     /elasticsearch/plugins/search-guard-6/tools/sgadmin.sh \
-    -cd /elasticsearch/config/searchguard \
-    -ks /elasticsearch/config/searchguard/ssl/elastic-keystore.jks \
-    -ts /elasticsearch/config/searchguard/ssl/truststore.jks \
+    -cd /elasticsearch/config/certs \
+    -ks /elasticsearch/config/certs/es-route-keystore.jks \
+    -ts /elasticsearch/config/certs/truststore.jks \
     -cn $CLUSTER_NAME \
     -kspass $KS_PWD \
     -tspass $TS_PWD \
-    -h $HOSTNAME \
+    -h $ES_HOST \
     -nhnv
 }
 

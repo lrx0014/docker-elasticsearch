@@ -26,10 +26,10 @@ searchguard:
         enabled: true
         enable_openssl_if_available: true
         keystore_type: JKS
-        keystore_filepath: searchguard/ssl/${NODE_NAME}-keystore.jks
+        keystore_filepath: certs/${NODE_NAME}-keystore.jks
         keystore_password: ${KS_PWD}
         truststore_type: JKS
-        truststore_filepath: searchguard/ssl/truststore.jks
+        truststore_filepath: certs/truststore.jks
         truststore_password: ${TS_PWD}
         enforce_hostname_verification: false
     ssl.http:
@@ -37,10 +37,10 @@ searchguard:
         clientauth_mode: OPTIONAL
         enable_openssl_if_available: true
         keystore_type: JKS
-        keystore_filepath: searchguard/ssl/${NODE_NAME}-keystore.jks
+        keystore_filepath: certs/${NODE_NAME}-keystore.jks
         keystore_password: ${KS_PWD}
         truststore_type: JKS
-        truststore_filepath: searchguard/ssl/truststore.jks
+        truststore_filepath: certs/truststore.jks
         truststore_password: ${TS_PWD}
     authcz.admin_dn:
       - "CN=elastic ,OU=devops, C=COM"
