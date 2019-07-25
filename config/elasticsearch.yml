@@ -17,30 +17,15 @@ http:
     enabled: ${HTTP_CORS_ENABLE}
     allow-origin: ${HTTP_CORS_ALLOW_ORIGIN}
 
-searchguard:
-    enterprise_modules_enabled: ${SG_ENTERPRISE_ENABLED}
-    restapi:
-        roles_enabled:
-          - "admin"
-    ssl.transport:
-        enabled: true
-        enable_openssl_if_available: true
-        keystore_type: JKS
-        keystore_filepath: certs/${NODE_NAME}-keystore.jks
-        keystore_password: ${KS_PWD}
-        truststore_type: JKS
-        truststore_filepath: certs/truststore.jks
-        truststore_password: ${TS_PWD}
-        enforce_hostname_verification: false
-    ssl.http:
-        enabled: ${HTTP_SSL}
-        clientauth_mode: OPTIONAL
-        enable_openssl_if_available: true
-        keystore_type: JKS
-        keystore_filepath: certs/${NODE_NAME}-keystore.jks
-        keystore_password: ${KS_PWD}
-        truststore_type: JKS
-        truststore_filepath: certs/truststore.jks
-        truststore_password: ${TS_PWD}
-    authcz.admin_dn:
-      - "CN=elastic ,OU=devops, C=COM"
+searchguard.ssl.transport.keystore_filepath: certs/${NODE_NAME}-keystore.jks
+searchguard.ssl.transport.keystore_password: ${KS_PWD} 
+searchguard.ssl.transport.truststore_filepath: certs/truststore.jks 
+searchguard.ssl.transport.truststore_password: ${TS_PWD} 
+searchguard.ssl.transport.enforce_hostname_verification: false 
+searchguard.ssl.http.enabled: true 
+searchguard.ssl.http.keystore_filepath: certs/${NODE_NAME}-keystore.jks 
+searchguard.ssl.http.keystore_password: ${KS_PWD} 
+searchguard.ssl.http.truststore_filepath: certs/truststore.jks 
+searchguard.ssl.http.truststore_password: ${TS_PWD} 
+searchguard.authcz.admin_dn:                                 
+  - CN=sgadmin   
